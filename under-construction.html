@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Construction | Archtalk</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .construction-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: var(--bg-color);
+            padding: 2rem;
+        }
+        
+        .construction-content {
+            color: var(--text-color);
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            max-width: 800px;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .construction-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(to right, #7d40ff, #5e9fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .construction-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .construction-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .release-date {
+            font-weight: 700;
+            color: var(--primary-light);
+        }
+        
+        .back-link {
+            margin-top: 1rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="construction-container">
+        <div class="construction-content">
+            <i class="fas fa-tools construction-icon"></i>
+            <h1 class="construction-title">Page Under Construction</h1>
+            <p class="construction-description">
+                This feature is currently under development and will be available in <span class="release-date">May 2025</span>.
+            </p>
+            <p class="construction-description">
+                We're working hard to bring you the best experience. Thank you for your patience.
+            </p>
+            <a href="index.html" class="primary-btn back-link">Back to Home</a>
+        </div>
+    </div>
+    
+    <script>
+        // Get the section from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const section = urlParams.get('section');
+        
+        // Update title if section parameter exists
+        if (section) {
+            const titleElement = document.querySelector('.construction-title');
+            titleElement.textContent = section.charAt(0).toUpperCase() + section.slice(1) + ' - Under Construction';
+            
+            // Update page title
+            document.title = section.charAt(0).toUpperCase() + section.slice(1) + ' | Archtalk';
+        }
+    </script>
+</body>
+</html> 

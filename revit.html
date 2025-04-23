@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LingoBIM | Revit Version</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .revit-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: var(--bg-color);
+            padding: 2rem;
+        }
+        
+        .revit-content {
+            color: var(--text-color);
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            max-width: 800px;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .revit-title {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(to right, #7d40ff, #5e9fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .revit-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .video-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin: 2rem 0;
+        }
+        
+        .video-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .video-icon {
+            font-size: 1.5rem;
+        }
+        
+        .back-link {
+            margin-top: 1rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="revit-container">
+        <div class="revit-content">
+            <h1 class="revit-title">LingoBIM</h1>
+            <p class="revit-description">
+                LingoBIM is an Autodesk Revit plugin I developed in 2024. It represents an early prototype of natural language interface for BIM modeling. The upcoming web version "Archtalk" will feature significant advancements beyond this Revit version.
+            </p>
+            <a href="https://youtu.be/KHmqNCpCqMI" target="_blank" class="video-link">
+                <i class="fab fa-youtube video-icon"></i>
+                Still Watch Demo Video
+            </a>
+            <a href="index.html" class="primary-btn back-link">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html> 

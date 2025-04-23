@@ -557,6 +557,10 @@ footer {
     .advisors-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    .tech-stack {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -608,6 +612,10 @@ footer {
     
     .team-member h4 {
         font-size: 1.3rem;
+    }
+    
+    .tech-stack {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -682,6 +690,46 @@ footer {
     font-size: 1.2rem;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+}
+
+/* Add tech stack section styling */
+.tech-stack {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 2.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tech-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(125, 64, 255, 0.1);
+    border-radius: 8px;
+    color: var(--primary-light);
+}
+
+.tech-name {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.tech-description {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
 }
 
 .team {
@@ -796,4 +844,24 @@ footer {
 .contact a:hover {
     color: var(--primary-light);
     text-decoration: underline;
-} 
+}
+
+.tech-title {
+    font-size: 1.8rem;
+    margin: 3rem auto 1.5rem;
+    color: var(--text-color);
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+/* .tech-title:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(to right, #7d40ff, #5e9fff);
+}  */
