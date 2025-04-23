@@ -541,6 +541,22 @@ footer {
     .footer-logo {
         text-align: center;
     }
+    
+    .about h2 {
+        font-size: 2.2rem;
+    }
+    
+    .about-content p {
+        font-size: 1.1rem;
+    }
+    
+    .team h3, .contact h3 {
+        font-size: 1.6rem;
+    }
+    
+    .advisors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -559,7 +575,7 @@ footer {
         gap: 1rem;
     }
     
-    .features h2, .showcase h2, .pricing h2, .cta h2 {
+    .features h2, .showcase h2, .pricing h2, .cta h2, .about h2 {
         font-size: 2rem;
     }
     
@@ -579,6 +595,19 @@ footer {
     
     .footer-links {
         grid-template-columns: 1fr;
+    }
+    
+    .advisors-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-content p {
+        font-size: 1rem;
+        text-align: left;
+    }
+    
+    .team-member h4 {
+        font-size: 1.3rem;
     }
 }
 
@@ -622,4 +651,149 @@ footer {
     60% {
         transform: translateX(-50%) translateY(-5px);
     }
+}
+
+/* About Section */
+.about {
+    text-align: center;
+    padding: 8rem 0 5rem;
+    background-color: var(--bg-color);
+    position: relative;
+    z-index: 5;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(to right, #7d40ff, #5e9fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.about-content {
+    max-width: 100%;
+    margin: 0 0 4rem 0;
+    text-align: left;
+    padding: 0;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.team {
+    margin-bottom: 4rem;
+}
+
+.team h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.team-member {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.team-member h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-light);
+}
+
+.affiliation {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.bio {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6; 
+    text-align: left;
+}
+
+.advisors-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.advisor {
+    background-color: var(--card-bg);
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.advisor a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.advisor:hover, .team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: var(--primary-light);
+}
+
+.team-member a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.advisor h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-light);
+}
+
+.contact {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.contact h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.contact p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact a {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
 } 
