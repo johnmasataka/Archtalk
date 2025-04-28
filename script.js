@@ -28,10 +28,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add scroll down functionality
     scrollDownBtn.addEventListener('click', function() {
-        const featuresSection = document.querySelector('.features');
-        if (featuresSection) {
+        const aboutSection = document.querySelector('.about');
+        if (aboutSection) {
             window.scrollTo({
-                top: featuresSection.offsetTop - 80,
+                top: aboutSection.offsetTop - 80,
                 behavior: 'smooth'
             });
         }
