@@ -112,8 +112,8 @@ header {
 
 nav ul {
     display: flex;
-    gap: 2rem;
     align-items: center;
+    gap: 2rem;
 }
 
 nav a {
@@ -961,3 +961,66 @@ footer {
     height: 3px;
     background: linear-gradient(to right, #7d40ff, #5e9fff);
 }  */
+
+/* Language Switcher Styles */
+.language-switcher {
+    position: relative;
+    margin: 0 10px;
+}
+
+.language-btn {
+    background: none;
+    border: none;
+    color: #9e9e9e;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.language-btn:hover {
+    color: #007bff;
+}
+
+.language-btn i {
+    font-size: 16px;
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: none;
+    min-width: 100px;
+    z-index: 1000;
+}
+
+.language-switcher:hover .language-dropdown {
+    display: block;
+}
+
+.language-dropdown a {
+    display: block;
+    padding: 8px 16px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.language-dropdown a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Ensure the language switcher is properly aligned in the nav */
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}

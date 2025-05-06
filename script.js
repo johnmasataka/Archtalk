@@ -247,4 +247,112 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Language switching functionality
+    let currentLang = 'en'; // Default language
+
+    // Function to update text content based on selected language
+    function updateContent(lang) {
+        const langData = translations[lang];
+        if (!langData) return;
+
+        // Update all elements with data-translate attribute
+        document.querySelectorAll('[data-translate]').forEach(element => {
+            const key = element.getAttribute('data-translate');
+            if (langData[key]) {
+                element.textContent = langData[key];
+            }
+        });
+
+        // Update navigation
+        document.querySelector('nav a[href="#"]').textContent = langData.home;
+        document.querySelector('nav a[href="https://discord.gg/5gQWBTKa"]').textContent = langData.community;
+        document.querySelector('nav a[href="under-construction.html?section=documentation"]').textContent = langData.documentation;
+        document.querySelector('nav a[href="under-construction.html?section=help"]').textContent = langData.help;
+        document.querySelector('.sign-in-btn').textContent = langData.signIn;
+
+        // Update hero section
+        document.querySelector('.hero-content h2').textContent = langData.heroTitle;
+        document.querySelector('.hero-content p').textContent = langData.heroSubtitle;
+        document.querySelector('.hero-buttons a:nth-child(1)').textContent = langData.playground;
+        document.querySelector('.hero-buttons a:nth-child(2)').textContent = langData.viewPaper;
+        document.querySelector('.hero-buttons a:nth-child(3)').textContent = langData.viewVideo;
+        document.querySelector('.hero-buttons a:nth-child(4)').textContent = langData.revitVersion;
+
+        // Update about section
+        document.querySelector('.about h2').textContent = langData.aboutTitle;
+        document.querySelector('.about-content p:nth-child(1)').textContent = langData.aboutText1;
+        document.querySelector('.about-content p:nth-child(2)').textContent = langData.aboutText2;
+        document.querySelector('.about-content p:nth-child(3)').textContent = langData.aboutText3;
+        document.querySelector('.tech-title').textContent = langData.techTitle;
+
+        // Update team section
+        document.querySelector('.team h3:first-child').textContent = langData.leadManager;
+        const advisorsHeading = document.querySelector('.team h3:nth-of-type(2)');
+        if (advisorsHeading) {
+            advisorsHeading.textContent = langData.advisors;
+        }
+
+        // Update features section
+        document.querySelector('.features h2').textContent = langData.featuresTitle;
+        document.querySelector('.feature-card:nth-child(1) h3').textContent = langData.feature1Title;
+        document.querySelector('.feature-card:nth-child(1) p').textContent = langData.feature1Desc;
+        document.querySelector('.feature-card:nth-child(2) h3').textContent = langData.feature2Title;
+        document.querySelector('.feature-card:nth-child(2) p').textContent = langData.feature2Desc;
+        document.querySelector('.feature-card:nth-child(3) h3').textContent = langData.feature3Title;
+        document.querySelector('.feature-card:nth-child(3) p').textContent = langData.feature3Desc;
+        document.querySelector('.feature-card:nth-child(4) h3').textContent = langData.feature4Title;
+        document.querySelector('.feature-card:nth-child(4) p').textContent = langData.feature4Desc;
+
+        // Update CTA section
+        document.querySelector('.cta-content h2').textContent = langData.ctaTitle;
+        document.querySelector('.cta-content p').textContent = langData.ctaSubtitle;
+        document.querySelector('.cta-content .primary-btn').textContent = langData.getStarted;
+    }
+
+    // Add event listeners to language switcher
+    const languageLinks = document.querySelectorAll('.language-dropdown a');
+    
+    languageLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const lang = this.getAttribute('data-lang');
+            currentLang = lang;
+            
+            // Update the language button text
+            const languageBtn = document.querySelector('.language-btn span');
+            languageBtn.textContent = this.textContent;
+            
+            // Update all content
+            updateContent(lang);
+            
+            // Store the selected language in localStorage
+            localStorage.setItem('preferredLanguage', lang);
+        });
+    });
+
+    // Check for saved language preference
+    const savedLang = localStorage.getItem('preferredLanguage');
+    if (savedLang) {
+        currentLang = savedLang;
+        const languageBtn = document.querySelector('.language-btn span');
+        const selectedLang = document.querySelector(`.language-dropdown a[data-lang="${savedLang}"]`);
+        if (selectedLang) {
+            languageBtn.textContent = selectedLang.textContent;
+            updateContent(savedLang);
+        }
+    }
+
+    // Set initial language based on browser preference
+    const browserLang = navigator.language || navigator.userLanguage;
+    if (browserLang.startsWith('zh')) {
+        const preferredChinese = browserLang.includes('TW') || browserLang.includes('HK') ? 'zh-TW' : 'zh-CN';
+        const chineseLink = document.querySelector(`.language-dropdown a[data-lang="${preferredChinese}"]`);
+        if (chineseLink) {
+            currentLang = preferredChinese;
+            const languageBtn = document.querySelector('.language-btn span');
+            languageBtn.textContent = chineseLink.textContent;
+            updateContent(preferredChinese);
+        }
+    }
 }); 

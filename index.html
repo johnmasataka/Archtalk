@@ -19,10 +19,23 @@
             <nav>
                 <ul>
                     <li><a href="#" class="active">Home</a></li>
-                    <li><a href="under-construction.html?section=community">Community</a></li>
-                    <li><a href="under-construction.html?section=gallery">Gallery</a></li>
+                    <li><a href="https://discord.gg/5gQWBTKa" target="_blank">Community</a></li>
+                    <!-- <li><a href="under-construction.html?section=gallery">Gallery</a></li> -->
                     <li><a href="under-construction.html?section=documentation">Documentation</a></li>
                     <li><a href="under-construction.html?section=help">Help</a></li>
+                    <li class="language-switcher">
+                        <button class="language-btn">
+                            <i class="fas fa-globe"></i>
+                            <span>English</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="language-dropdown">
+                            <a href="#" data-lang="en">English</a>
+                            <a href="#" data-lang="ja">日本語</a>
+                            <a href="#" data-lang="zh-CN">简体中文</a>
+                            <a href="#" data-lang="zh-TW">繁體中文</a>
+                        </div>
+                    </li>
                     <li><a href="#" class="sign-in-btn">Sign In</a></li>
                 </ul>
             </nav>
@@ -124,16 +137,16 @@
                 </div>
                 
                 <div class="team">
-                    <h3>Lead Manager & Full-Stack Developer</h3>
+                    <h3 data-translate="leadManager">Lead Manager & Full-Stack Developer</h3>
                     <div class="team-member">
                         <a href="https://johnxianfengjiang.cargo.site/" target="_blank">
-                            <h4>John Masataka Xianfeng Jiang</h4>
-                            <p class="affiliation">Columbia University GSAPP</p>
-                            <p class="bio">John is a New York/ Tokyo-based architect, AI researcher, and project manager. He has over seven years of professional experience at Kengo Kuma & Associates (KKAA) and is a member of the Architectural Institute of Japan (AIJ). Currently, he is exploring the development of large language models (LLMs) to contribute to the architecture, engineering, and construction industries.</p>
+                            <h4 data-translate="johnName">John Masataka Xianfeng Jiang</h4>
+                            <p class="affiliation" data-translate="johnAffiliation">Columbia University GSAPP</p>
+                            <p class="bio" data-translate="johnBio">John is a New York/ Tokyo-based architect, AI researcher, and project manager. He has over seven years of professional experience at Kengo Kuma & Associates (KKAA) and is a member of the Architectural Institute of Japan (AIJ). Currently, he is exploring the development of large language models (LLMs) to contribute to the architecture, engineering, and construction industries.</p>
                         </a>
                     </div>
                     
-                    <h3>Advisors</h3>
+                    <h3 data-translate="advisors">Advisors</h3>
                     <div class="advisors-grid">
                         <div class="advisor">
                             <a href="https://www.danilnagy.com/" target="_blank">
@@ -163,15 +176,15 @@
                 </div>
                 
                 <div class="contact">
-                    <h3>Contact</h3>
-                    <p>Email: <a href="mailto:johnmasataka@outlook.com">johnmasataka@outlook.com</a></p>
-                    <p>LinkedIn: <a href="https://www.linkedin.com/in/johnmasataka-xianfeng-jiang/" target="_blank">@JohnMasatakaXianfengJiang</a></p>
+                    <h3 data-translate="contact">Contact</h3>
+                    <p><span data-translate="email">Email</span>: <a href="mailto:johnmasataka@outlook.com">johnmasataka@outlook.com</a></p>
+                    <p><span data-translate="linkedin">LinkedIn</span>: <a href="https://www.linkedin.com/in/johnmasataka-xianfeng-jiang/" target="_blank">@JohnMasatakaXianfengJiang</a></p>
                 </div>
             </div>
         </section>
 
         <section class="features">
-            <h2>A Conversational Interface for Building Information Modeling (BIM)</h2>
+            <h2 data-translate="featuresTitle">A Conversational Interface for Building Information Modeling</h2>
             <div class="feature-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -279,7 +292,7 @@
             <div class="cta-content">
                 <h2>Start creating amazing architecture today</h2>
                 <p>Join thousands of artists, designers, and creators using Archtalk</p>
-                <a href="#" class="primary-btn">Get Started Now</a>
+                <a href="https://archtalk-playground-demo.onrender.com/" class="primary-btn">Get Started Now</a>
             </div>
         </section>
 
@@ -334,6 +347,7 @@
         </footer>
     </div>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 
