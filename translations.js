@@ -127,7 +127,7 @@ const translations = {
         // Navigation
         home: "首页",
         community: "社区",
-        documentation: "产品故事",
+        documentation: "开发概念",
         help: "帮助",
         signIn: "登录",
         
@@ -188,7 +188,7 @@ const translations = {
         // Navigation
         home: "首頁",
         community: "社群",
-        documentation: "産品故事",
+        documentation: "開發理念",
         help: "幫助",
         signIn: "登入",
         
