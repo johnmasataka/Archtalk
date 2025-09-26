@@ -107,6 +107,262 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(typeWriter, 500);
     }
 
+    // Add modal functionality for the "Help" button
+    const helpBtn = document.querySelector('.help-btn');
+    
+    if (helpBtn) {
+        helpBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Create modal elements
+            const modalOverlay = document.createElement('div');
+            modalOverlay.className = 'modal-overlay';
+            
+            const modalContent = document.createElement('div');
+            modalContent.className = 'modal-content';
+            
+            modalContent.innerHTML = `
+                <div class="modal-header">
+                    <h2>Help & Support</h2>
+                    <button class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p style="margin-bottom: 1.5rem; color: #ccc;">Please provide your details and describe the technical issue you're experiencing.</p>
+                    <form class="help-form">
+                        <div class="form-group">
+                            <label for="help-name">Name *</label>
+                            <input type="text" id="help-name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="help-contact">Email Address *</label>
+                            <input type="email" id="help-contact" placeholder="Enter your email address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="help-issue">Technical Issue Description *</label>
+                            <textarea id="help-issue" placeholder="Please describe the technical issue you're experiencing in detail..." rows="6" required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="primary-btn">Submit Help Request</button>
+                            <button type="button" class="secondary-btn cancel-btn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            `;
+            
+            modalOverlay.appendChild(modalContent);
+            document.body.appendChild(modalOverlay);
+            
+            // Add styles for modal (reuse existing styles)
+            const style = document.createElement('style');
+            style.textContent = `
+                .modal-overlay {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(0, 0, 0, 0.8);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 1000;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+                
+                .modal-content {
+                    background: var(--card-bg);
+                    border-radius: 12px;
+                    max-width: 600px;
+                    width: 100%;
+                    padding: 2rem;
+                    border: 1px solid var(--border-color);
+                    transform: translateY(20px);
+                    transition: transform 0.3s ease;
+                }
+                
+                .modal-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 1.5rem;
+                }
+                
+                .modal-close {
+                    background: none;
+                    border: none;
+                    color: white;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                }
+                
+                .modal-body {
+                    min-height: 400px;
+                }
+                
+                .help-form {
+                    width: 100%;
+                }
+                
+                .form-group {
+                    margin-bottom: 1.5rem;
+                }
+                
+                .form-group label {
+                    display: block;
+                    margin-bottom: 0.5rem;
+                    color: white;
+                    font-weight: 500;
+                }
+                
+                .form-group input,
+                .form-group textarea {
+                    width: 100%;
+                    padding: 0.75rem;
+                    border-radius: 6px;
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid var(--border-color);
+                    color: white;
+                    font-family: inherit;
+                    transition: border-color 0.3s ease;
+                }
+                
+                .form-group input:focus,
+                .form-group textarea:focus {
+                    outline: none;
+                    border-color: var(--primary-color);
+                    background: rgba(255, 255, 255, 0.08);
+                }
+                
+                .form-group textarea {
+                    resize: vertical;
+                    min-height: 120px;
+                }
+                
+                .form-group input::placeholder,
+                .form-group textarea::placeholder {
+                    color: rgba(255, 255, 255, 0.5);
+                }
+                
+                .form-actions {
+                    display: flex;
+                    gap: 1rem;
+                    justify-content: flex-end;
+                    margin-top: 2rem;
+                }
+                
+                .secondary-btn {
+                    background: transparent;
+                    border: 1px solid var(--border-color);
+                    color: white;
+                    padding: 0.75rem 1.5rem;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+                
+                .secondary-btn:hover {
+                    background: rgba(255, 255, 255, 0.05);
+                    border-color: var(--primary-color);
+                }
+                
+                .primary-btn:disabled {
+                    opacity: 0.6;
+                    cursor: not-allowed;
+                }
+            `;
+            
+            document.head.appendChild(style);
+            
+            // Define closeModal function first
+            function closeModal() {
+                modalOverlay.style.opacity = '0';
+                modalContent.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    if (document.body.contains(modalOverlay)) {
+                        document.body.removeChild(modalOverlay);
+                    }
+                }, 300);
+            }
+            
+            // Animate modal in
+            setTimeout(() => {
+                modalOverlay.style.opacity = '1';
+                modalContent.style.transform = 'translateY(0)';
+            }, 10);
+            
+            // Handle form submission
+            const helpForm = modalContent.querySelector('.help-form');
+            helpForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('help-name').value;
+                const email = document.getElementById('help-contact').value;
+                const issue = document.getElementById('help-issue').value;
+                
+                // Show loading state
+                const submitBtn = helpForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                
+                // EmailJS configuration
+                // You'll need to replace these with your actual EmailJS credentials
+                const serviceID = 'service_9m3b8at'; // Replace with your EmailJS service ID, check on https://dashboard.emailjs.com/admin
+                const templateID = 'template_7udxfnq'; // Replace with your EmailJS template ID
+                const publicKey = 'cRgtfR2Y6S9dMQUBH'; // Replace with your EmailJS public key
+                
+                // Initialize EmailJS
+                emailjs.init(publicKey);
+                
+                // Prepare email parameters
+                const templateParams = {
+                    from_name: name,
+                    from_email: email,
+                    message: issue,
+                    to_email: 'johnmasataka@outlook.com', // Your support email
+                    subject: 'Archtalk Help Request'
+                };
+                
+                // Send email
+                emailjs.send(serviceID, templateID, templateParams)
+                    .then(function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        alert('Thank you for your help request! We will get back to you soon.');
+                        closeModal();
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                        alert('Sorry, there was an error sending your request. Please try again or contact us directly at johnmasataka@outlook.com');
+                    })
+                    .finally(function() {
+                        // Reset button state
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    });
+            });
+            
+            // Handle Cancel button
+            const cancelBtn = modalContent.querySelector('.cancel-btn');
+            cancelBtn.addEventListener('click', function() {
+                closeModal();
+            });
+            
+            // Handle modal close (X button)
+            const closeBtn = modalContent.querySelector('.modal-close');
+            closeBtn.addEventListener('click', function() {
+                closeModal();
+            });
+            
+            // Handle clicking outside modal
+            modalOverlay.addEventListener('click', function(e) {
+                if (e.target === modalOverlay) {
+                    closeModal();
+                }
+            });
+        });
+    }
+
     // Add simple modal functionality for the "Sign In" button
     const signInBtn = document.querySelector('.sign-in-btn');
     
@@ -268,7 +524,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('nav a[href="#"]').textContent = langData.home;
         document.querySelector('nav a[href="https://discord.gg/5gQWBTKa"]').textContent = langData.community;
         document.querySelector('nav a[href="under-construction.html?section=documentation"]').textContent = langData.documentation;
-        document.querySelector('nav a[href="under-construction.html?section=help"]').textContent = langData.help;
+        document.querySelector('nav a.help-btn').textContent = langData.help;
         document.querySelector('.sign-in-btn').textContent = langData.signIn;
 
         // Update hero section
