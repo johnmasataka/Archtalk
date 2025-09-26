@@ -10,7 +10,7 @@ const translations = {
         // Hero Section
         // heroTitle: "Redefine BIM with AI",
         heroSubtitle: "Talk to Build, Build to Think, Think to Create",
-        playground: "Playground",
+        playground: "Try It Now!",
         viewPaper: "View Paper",
         viewVideo: "View Video",
         revitVersion: "Revit Version",
@@ -37,8 +37,8 @@ const translations = {
         // Team Section
         leadManager: "Lead Manager & Full-Stack Developer",
         johnName: "John Masataka Xianfeng Jiang",
-        johnAffiliation: "Columbia University GSAPP",
-        johnBio: "John is a New York/ Tokyo-based architect, AI researcher, and project manager. He has over seven years of professional experience at Kengo Kuma & Associates (KKAA) and is a member of the Architectural Institute of Japan (AIJ). Currently, he is exploring the development of large language models (LLMs) to contribute to the architecture, engineering, and construction industries.",
+        johnAffiliation: "Columbia University",
+        johnBio: "John is a New York/ Tokyo-based architect, AI researcher, and project manager. He has over eight years of professional experience at Kengo Kuma & Associates (KKAA) and Kohn Pedersen Fox (KPF). He is a member of the American Institute of Architecture (AIA) and the Architectural Institute of Japan (AIJ). Currently, he is exploring the development of large language models (LLMs) to contribute to the architecture, engineering, and construction industries.",
         advisors: "Advisors",
         contact: "Contact",
         email: "Email",
@@ -71,7 +71,7 @@ const translations = {
         // Hero Section
         heroTitle: "AIでBIMを再定義",
         heroSubtitle: "話して作る、作って考える、考えて創造する",
-        playground: "プレイグラウンド",
+        playground: "今すぐ試す！",
         viewPaper: "論文を見る",
         viewVideo: "動画を見る",
         revitVersion: "Revit版",
@@ -100,7 +100,7 @@ const translations = {
         johnName: "ジョン・賢峰・蔣",
         johnAffiliation: "コロンビア大学",
         johnBio: "蔣はニューヨークと東京を拠点とする建築家、AI研究者、プロジェクトマネージャー。" + 
-                "隈研吾建築都市設計事務所にてマネージャーを務め、日本建築学会正会員。" + 
+                "隈研吾建築都市設計事務所マネージャーを務め、コーン・ペダーセン・フォックス (KPF) にてデザインテクノロジーを担当、アメリカ建築学会および日本建築学会正会員。" + 
                 "現在は、建築・エンジニアリング・建設分野における大規模言語モデル（LLM）の応用と開発に取り組んでいる。",
         advisors: "アドバイザー",
         contact: "お問い合わせ",
@@ -134,7 +134,7 @@ const translations = {
         // Hero Section
         heroTitle: "用AI重新定义BIM",
         heroSubtitle: "对话构建，构建思考，思考创造",
-        playground: "演示版",
+        playground: "试用演示版",
         viewPaper: "查看论文",
         viewVideo: "查看视频",
         revitVersion: "Revit版本",
@@ -162,7 +162,7 @@ const translations = {
         leadManager: "项目管理和全栈开发者",
         johnName: "蒋贤峰",
         johnAffiliation: "哥伦比亚大学",
-        johnBio: "蒋贤峰是一位常驻纽约/东京的建筑师、AI研究员和项目经理。他在隈研吾建筑都市设计事务所（KKAA）担任设计总监，并且是日本建筑学会的会员。目前，他正在探索开发大型语言模型（LLM），为建筑、工程和建设行业做出贡献。",
+        johnBio: "蒋贤峰是一位常驻纽约/东京的建筑师、AI研究员和项目经理。他在隈研吾建筑都市设计事务所（KKAA）担任设计总监，以及在科恩·佩德森·福克斯（KPF）担任设计技术负责人，并且是美国建筑学会和日本建筑学会的会员。目前，他正在探索开发大型语言模型（LLM），为建筑、工程和施工行业做出贡献。",
         advisors: "顾问",
         contact: "联系方式",
         email: "邮箱",
@@ -195,7 +195,7 @@ const translations = {
         // Hero Section
         heroTitle: "用AI重新定義BIM",
         heroSubtitle: "對話構建，構建思考，思考創造",
-        playground: "演示版",
+        playground: "立即試用演示版",
         viewPaper: "查看論文",
         viewVideo: "查看影片",
         revitVersion: "Revit版本",
@@ -223,7 +223,7 @@ const translations = {
         leadManager: "首席經理和全棧開發者",
         johnName: "蔣賢峰",
         johnAffiliation: "哥倫比亞大學",
-        johnBio: "蔣賢峰是一位常駐紐約/東京的建築師、AI研究員和專案經理。他在隈研吾建築都市設計事務所（KKAA）担任專案經理，並且是日本建築學會（AIJ）的會員。目前，他正在探索開發大型語言模型（LLM），為建築、工程和建設行業做出貢獻。",
+        johnBio: "蔣賢峰是一位常駐紐約/東京的建築師、AI研究員和專案經理。他在隈研吾建築都市設計事務所（KKAA）担任專案經理，以及在科恩·佩德森·福克斯（KPF）担任设计技术负责人，並且是美國建築學會（AIA）和日本建築學會（AIJ）的會員。目前，他正在探索開發大型語言模型（LLM），為建築、工程和施工行業做出貢獻。",
         advisors: "顧問",
         contact: "聯繫方式",
         email: "郵箱",
